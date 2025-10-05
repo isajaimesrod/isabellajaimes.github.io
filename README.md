@@ -3,6 +3,7 @@
 #### I am an STS and CSCW researcher, my research focus on how technology shapes and mediate relations within immigrant Latinx communities. My work explores the intersection of technology, labor, and social justice, focusing on marginalized communities' experiences and challenges in digital spaces. I am part of Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto
 
 ## Education
+
 - Ph.D., Information | University of Toronto (_Sept 2025 -current_)								       		
 - M.A., Science and Technology Studies	| York University (_Oct 2025_)
 - B.A., Political Science and Government | Universidad del Rosario (_March 2023_)	 			        		
