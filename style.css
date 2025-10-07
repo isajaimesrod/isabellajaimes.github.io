@@ -78,3 +78,36 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+
+
+/* Education Section */
+.education h2 {
+  background: #a9db9b;  /* soft green like Canva */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.edu-list {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  row-gap: 1rem;
+  align-items: start;
+}
+
+.edu-item {
+  display: contents; /* keep timeline look */
+}
+
+.edu-item .year {
+  font-weight: 600;
+  color: #444;
+}
+
+.edu-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
