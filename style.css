@@ -18,7 +18,7 @@ body {
 
 /* Header */
 header {
-  background: #f0ede9;
+  background: #ecf2da;
   text-align: center;
   padding: 4rem 2rem;
 }
@@ -82,7 +82,7 @@ footer {
 
 /* Education Section */
 .education h2 {
-  background: #a68a64;  
+  background: #a9db9b;  
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -115,7 +115,7 @@ footer {
 
 /* Publications Section */
 .publications h2 {
-  background: #a68a64;  /* warm brown accent */
+  background: #a9db9b;  /* warm brown accent */
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -135,7 +135,7 @@ footer {
 }
 
 .publications a {
-  color: #a68a64;
+  color: #a9db9b;
   text-decoration: none;
   font-weight: 500;
 }
