@@ -82,7 +82,7 @@ footer {
 
 /* Education Section */
 .education h2 {
-  background: #a9db9b;  /* soft green like Canva */
+  background: #8a7152;  
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -111,3 +111,36 @@ footer {
   font-size: 1rem;
   line-height: 1.4;
 }
+
+
+/* Publications Section */
+.publications h2 {
+  background: #a68a64;  /* warm brown accent */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2a2a2a;
+}
+
+.publications ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.publications li {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.publications a {
+  color: #8a7152;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.publications a:hover {
+  text-decoration: underline;
+}
+
