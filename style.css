@@ -82,7 +82,7 @@ footer {
 
 /* Education Section */
 .education h2 {
-  background: #8a7152;  
+  background: #a68a64;  
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -135,7 +135,7 @@ footer {
 }
 
 .publications a {
-  color: #8a7152;
+  color: #a68a64;
   text-decoration: none;
   font-weight: 500;
 }
