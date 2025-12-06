@@ -140,6 +140,46 @@ body {
   flex-wrap: wrap;
 }
 
+
+.hero-text {
+  max-width: 480px;  /* para que no se vea tan comprimido */
+}
+
+/* Nombre principal */
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);  /* grande pero responsive */
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+}
+
+/* Línea corta tipo rol / research */
+.hero-role {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+}
+
+/* Subtítulo más discreto */
+.hero-subtitle {
+  max-width: 26rem;
+  font-size: 0.95rem;
+  opacity: 0.92;
+  margin: 0;
+}
+
+/* Etiqueta de arriba */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  margin-bottom: 0.9rem;
+  opacity: 0.9;
+}
+
+
 /* Hero image placeholder */
 
 .hero-image {
