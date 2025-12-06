@@ -308,9 +308,33 @@ img {
   transform: translateY(0);
 }
 
+/* Texto dentro del slider */
 .story-text {
-  max-width: 550px; /* mismo valor */
+  max-width: 600px; /* más ancho */
+  font-size: 1.1rem; /* más grande */
+  line-height: 1.65; /* más aire */
+  color: #3b3b3b;
 }
+
+.story-text h3, 
+.story-text .slide-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #7e776b;
+  margin-bottom: 1rem;
+}
+
+.story-text p {
+  margin-bottom: 1.2rem; /* más aire entre párrafos */
+}
+
+/* Botones previous/next */
+.story-nav {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
 
 /* Subtitle label */
 .story-label {
