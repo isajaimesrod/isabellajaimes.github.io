@@ -55,11 +55,11 @@ img {
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url('IMG_7356.jpg'); /* puedes cambiar esta imagen */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-
+  background:
+    linear-gradient(120deg, rgba(6, 39, 32, 0.55), rgba(45, 90, 60, 0.35)),
+    url('IMG_7356.jpg') center/cover no-repeat;
+  color: #f5f5f2;
+  
   display: flex;
   flex-direction: column;
 }
@@ -187,28 +187,7 @@ img {
   align-self: center;
 }
 
-.image-placeholder {
-  width: 100%;
-  max-width: 360px;
-  height: 260px;
-  border-radius: 26px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
-    url('IMG_7359.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem 1.4rem;
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 22px 40px rgba(0,0,0,0.35);
-}
 
-.image-placeholder span {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  opacity: 0.96;
-}
 
 /* ---------- BUTTONS ---------- */
 
