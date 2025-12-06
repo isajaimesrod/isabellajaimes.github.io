@@ -7,6 +7,63 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===== STORY SLIDER =====
+    const slider = document.querySelector('.story-slider');
+
+    if (slider) {
+      const slides = Array.from(slider.querySelectorAll('.story-slide'));
+      const dots   = Array.from(slider.querySelectorAll('.story-dot'));
+      const prev   = slider.querySelector('.story-arrow.prev');
+      const next   = slider.querySelector('.story-arrow.next');
+      let current = 0;
+
+      if (!slides.length || !prev || !next || !dots.length) {
+        console.warn('Story slider: missing elements');
+        return;
+      }
+
+      function showSlide(index) {
+        current = index;
+        slides.forEach((s, i) => {
+          if (i === current) {
+            s.classList.add('is-active');
+          } else {
+            s.classList.remove('is-active');
+          }
+        });
+
+        dots.forEach((d, i) => {
+          if (i === current) {
+            d.classList.add('is-active');
+          } else {
+            d.classList.remove('is-active');
+          }
+        });
+      }
+
+      prev.addEventListener('click', () => {
+        const newIndex = (current - 1 + slides.length) % slides.length;
+        showSlide(newIndex);
+      });
+
+      next.addEventListener('click', () => {
+        const newIndex = (current + 1) % slides.length;
+        showSlide(newIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => showSlide(i));
+      });
+
+      // start on first slide
+      showSlide(0);
+    }
+  });
+</script>
+
+  
 <body>
 
   <!-- HERO / LANDING -->
