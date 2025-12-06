@@ -301,35 +301,85 @@ img {
   color: #333;
 }
 
-/* Bloques-escena con flecha */
-.story-block {
+/* Slider container */
+.story-slider {
   position: relative;
-  margin-bottom: 1.6rem;
-  padding-left: 1.4rem;
-  border-left: 2px solid #d9c9b2;
 }
 
-.story-block::before {
-  content: "➝";
-  position: absolute;
-  left: -0.85rem;
-  top: 0.15rem;
-  font-size: 0.9rem;
-  color: #b68f63;
+/* Each slide */
+.story-slide {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 }
 
+.story-slide.is-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtitle label */
 .story-label {
   font-family: 'Fraunces', serif; /* o la serif que estés usando */
   font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: #8a8074;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.4rem;
 }
 
-.story-block p {
-  margin: 0;
+/* Controls (arrows + dots) */
+.story-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+  font-size: 0.82rem;
+  color: #7a7268;
 }
+
+.story-arrow {
+  border: none;
+  background: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: #7a7268;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.story-arrow:hover {
+  background: #ece1d3;
+  transform: translateY(-1px);
+}
+
+.story-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4c7b4;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.story-dot.is-active {
+  background: #b48a5d;
+  transform: scale(1.25);
+}
+
 
 
 /* ---------- ABOUT ---------- */
