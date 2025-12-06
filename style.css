@@ -9,10 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Fraunces', sans-serif;
   line-height: 1.7;
   color: #1f2924;
   background: #faf7f1;
@@ -84,6 +85,7 @@ img {
   align-items: center;
   padding: 1.5rem 0 0.5rem;
 }
+
 
 .logo {
   font-family: 'Playfair Display', serif;
