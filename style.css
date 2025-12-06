@@ -263,7 +263,7 @@ img {
   display: grid;
   grid-template-columns: 1.05fr 1.3fr;
   gap: 3.5rem;
-  align-items: flex-start;   /* antes: center */
+  align-items: flex-start;
 }
 
 .cw-image img {
@@ -273,31 +273,44 @@ img {
   box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
-/* Bloque de texto más “crónica” */
+/* Columna de texto tipo crónica */
 .cw-text {
-  max-width: 40rem;          /* columna más estrecha */
-}
-
-.cw-text .lead {
-  font-family: 'Fraunces', serif;
-  font-size: 1.2rem;
+  max-width: 40rem;
+  font-size: 1.02rem;
   line-height: 1.8;
-  margin-bottom: 1.4rem;
-  color: #222525;
+  color: #333;
 }
 
-/* Párrafos siguientes un poco más suaves */
-.cw-text p {
-  margin-bottom: 1.1rem;
-  color: #333;
-  font-size: 0.98rem;
+/* Bloques-escena con flecha */
+.story-block {
+  position: relative;
+  margin-bottom: 1.6rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid #d9c9b2;
 }
-.cw-text p {
-  text-align: justify;
+
+.story-block::before {
+  content: "➝";
+  position: absolute;
+  left: -0.85rem;
+  top: 0.15rem;
+  font-size: 0.9rem;
+  color: #b68f63;
 }
-.current-work .section-header {
-  margin-bottom: 2.8rem;
+
+.story-label {
+  font-family: 'Fraunces', serif; /* o la serif que estés usando */
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8a8074;
+  margin: 0 0 0.35rem;
 }
+
+.story-block p {
+  margin: 0;
+}
+
 
 /* ---------- ABOUT ---------- */
 
