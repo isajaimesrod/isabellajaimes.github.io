@@ -162,6 +162,26 @@ img {
 
 /* HERO IMAGE / TARJETA */
 
+
+/* Hero entrance animation */
+.hero-text,
+.hero-image {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroFadeUp 0.9s ease-out forwards;
+}
+
+.hero-image {
+  animation-delay: 0.15s; /* comes in just after the text */
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-image {
   justify-self: flex-end;
   align-self: center;
@@ -634,6 +654,28 @@ footer {
   .hero-content {
     gap: 4rem;
   }
+}
+
+
+/* Scroll reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional small stagger */
+.reveal.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal.delay-2 {
+  transition-delay: 0.2s;
 }
 
 
