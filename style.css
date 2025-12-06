@@ -48,12 +48,11 @@ body {
 
 .hero {
   position: relative;
-  min-height: 80vh;
-  background-image: url('hero.jpg'); /* pon aquí tu imagen */
-  background-size: cover;
-  background-position: center;
+  min-height: 100vh;              /* ocupa la pantalla completa */
+  background: radial-gradient(circle at top left, #5f7d61 0%, #20352c 45%, #97b48d 100%);
   color: #fff;
 }
+
 
 .hero-overlay {
   position: absolute;
