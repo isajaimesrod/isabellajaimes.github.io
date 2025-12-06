@@ -812,4 +812,117 @@ footer {
 }
 
 
+.research-stories {
+  padding: 5rem 0 6rem;
+}
+
+.research-group {
+  margin-bottom: 3.5rem;
+}
+
+.research-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.research-group h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.column-intro {
+  font-size: 0.95rem;
+  color: #6c6a63;
+  margin-bottom: 1.8rem;
+}
+
+/* Lista vertical de historias */
+.story-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+/* Card estilo página con imagen + texto */
+.story-card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.4fr;
+  gap: 1.6rem;
+  background: #fdfaf5;
+  border-radius: 22px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+
+  /* estado inicial para animación */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: calc(0.12s * var(--card-order, 0));
+}
+
+.story-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #dfc19d, #b68a5d);
+  opacity: 0.7;
+}
+
+/* Imagen */
+.story-card-image {
+  position: relative;
+  z-index: 1;
+}
+
+.story-card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* Texto */
+.story-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.story-card-body h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.story-card-body p {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: #3f3c37;
+}
+
+.story-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9a8b7a;
+  margin-bottom: 0.4rem;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .story-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
