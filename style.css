@@ -285,16 +285,31 @@ img {
 
 /* Each slide */
 .story-slide {
-  display: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 }
 
+.story-slide img {
+  width: 100%;
+  height: 100%;
+  max-width: 550px; /* el ancho ideal según tu layout */
+  object-fit: cover; /* recorta la imagen para que encaje */
+  border-radius: 20px;
+}
+
+
 .story-slide.is-active {
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+
+.story-text {
+  max-width: 550px; /* mismo valor */
 }
 
 /* Subtitle label */
