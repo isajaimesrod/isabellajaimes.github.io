@@ -67,12 +67,8 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(18, 34, 24, 0.9),
-    rgba(60, 84, 64, 0.8),
-    rgba(150, 163, 121, 0.78)
-  );
+  background: rgba(0, 0, 0, 0.10); /* ← 0.10 = casi nada de sombra */
+  pointer-events: none;
 }
 
 /* NAV */
