@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,102 +15,342 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Satoshi', sans-serif;
-      background:#f8f6f2;
+      background:#f5f1ea;
       color:#111;
-      line-height:1.6;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
     .container{
-      width:min(900px, 90%);
+      width:min(1180px, 90%);
       margin:auto;
     }
 
-    header{
-      padding:80px 0 60px;
+    /* HERO */
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      background:url("IMG_7356.jpg") center center/cover no-repeat;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.38);
     }
 
     nav{
+      position:relative;
+      z-index:2;
       display:flex;
       justify-content:space-between;
-      margin-bottom:80px;
+      align-items:center;
+      padding:32px 0;
+      color:white;
+    }
+
+    .logo{
+      font-size:14px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
       font-size:14px;
     }
 
-    nav a{
-      text-decoration:none;
-      color:#111;
-      margin-left:20px;
+    .hero-content{
+      position:relative;
+      z-index:2;
+      color:white;
+      padding-bottom:100px;
+      max-width:760px;
+    }
+
+    .hero-tag{
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      margin-bottom:20px;
+      opacity:0.9;
     }
 
     .hero h1{
-      font-size:64px;
-      line-height:1;
-      margin-bottom:20px;
+      font-size:82px;
+      line-height:0.95;
+      font-weight:700;
+      margin-bottom:28px;
     }
 
     .hero p{
-      max-width:700px;
-      font-size:18px;
-      color:#444;
+      font-size:22px;
+      max-width:650px;
+      color:rgba(255,255,255,0.9);
     }
 
+    /* GENERAL SECTIONS */
+
     section{
-      padding:80px 0;
-      border-top:1px solid #ddd;
+      padding:120px 0;
+    }
+
+    .section-label{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      margin-bottom:18px;
+      color:#777;
     }
 
     h2{
-      font-size:32px;
-      margin-bottom:25px;
+      font-size:54px;
+      line-height:1;
+      margin-bottom:30px;
+      font-weight:700;
     }
 
-    .grid{
+    .intro{
+      max-width:780px;
+      font-size:22px;
+      color:#444;
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:80px;
+      margin-top:70px;
+    }
+
+    .about-text p{
+      margin-bottom:24px;
+      font-size:18px;
+      color:#333;
+    }
+
+    .side-card{
+      background:white;
+      padding:40px;
+      border-radius:28px;
+    }
+
+    .side-card h3{
+      margin-bottom:18px;
+      font-size:18px;
+    }
+
+    .side-card ul{
+      list-style:none;
+      margin-bottom:30px;
+    }
+
+    .side-card li{
+      margin-bottom:14px;
+      color:#444;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .tag{
+      padding:10px 16px;
+      border-radius:999px;
+      background:#ece7df;
+      font-size:14px;
+    }
+
+    /* RESEARCH */
+
+    .research-item{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:40px;
+      gap:60px;
+      align-items:center;
+      margin-bottom:140px;
     }
 
-    .card{
+    .research-item.reverse{
+      direction:rtl;
+    }
+
+    .research-item.reverse *{
+      direction:ltr;
+    }
+
+    .research-image{
+      height:650px;
+      overflow:hidden;
+      border-radius:30px;
+    }
+
+    .research-image img{
+      height:100%;
+    }
+
+    .research-content{
+      max-width:520px;
+    }
+
+    .research-content h3{
+      font-size:42px;
+      line-height:1;
+      margin-bottom:22px;
+    }
+
+    .research-content p{
+      color:#444;
+      margin-bottom:24px;
+      font-size:18px;
+    }
+
+    .publication{
+      font-size:15px;
+      padding-top:20px;
+      border-top:1px solid #ddd;
+    }
+
+    .publication a{
+      text-decoration:underline;
+    }
+
+    /* PUBLICATIONS */
+
+    .pub-list{
+      margin-top:60px;
+      display:flex;
+      flex-direction:column;
+      gap:30px;
+    }
+
+    .pub{
       background:white;
-      padding:25px;
-      border-radius:16px;
+      padding:35px;
+      border-radius:24px;
     }
 
-    .card h3{
-      margin-bottom:10px;
+    .pub h4{
+      margin-bottom:12px;
       font-size:22px;
     }
 
-    .card p{
+    .pub p{
       color:#555;
     }
 
-    .btn{
+    /* TIMELINE */
+
+    .timeline{
+      margin-top:60px;
+      border-left:1px solid #ccc;
+      padding-left:40px;
+    }
+
+    .timeline-item{
+      margin-bottom:60px;
+      position:relative;
+    }
+
+    .timeline-item::before{
+      content:"";
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:#111;
+      position:absolute;
+      left:-47px;
+      top:8px;
+    }
+
+    .timeline-item span{
+      font-size:14px;
+      color:#777;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .timeline-item h4{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+      padding-bottom:140px;
+    }
+
+    .contact p{
+      font-size:20px;
+      color:#444;
+      margin-bottom:30px;
+    }
+
+    .button{
       display:inline-block;
-      margin-top:25px;
-      padding:14px 22px;
+      padding:16px 28px;
       background:#111;
       color:white;
-      text-decoration:none;
       border-radius:999px;
+      transition:0.3s;
+    }
+
+    .button:hover{
+      opacity:0.85;
     }
 
     footer{
-      padding:40px 0;
+      padding:40px;
       text-align:center;
       font-size:14px;
       color:#777;
     }
 
-    @media(max-width:768px){
-      .grid{
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:54px;
+      }
+
+      h2{
+        font-size:40px;
+      }
+
+      .about-grid,
+      .research-item{
         grid-template-columns:1fr;
       }
 
-      .hero h1{
-        font-size:42px;
+      .research-image{
+        height:420px;
       }
 
       nav{
@@ -117,152 +358,358 @@
         gap:20px;
       }
 
-      nav div:last-child a{
-        margin-left:0;
-        margin-right:15px;
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <header class="container">
-    <nav>
-      <div>
-        <strong>Isabella Jaimes Rodriguez</strong>
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="overlay"></div>
+
+    <nav class="container">
+      <div class="logo">
+        Isabella Jaimes Rodriguez
       </div>
 
-      <div>
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
-    <div class="hero">
-      <p>STS · CSCW · Feminist Technoscience</p>
+    <div class="hero-content container">
+
+      <div class="hero-tag">
+        STS · CSCW · Feminist Technoscience
+      </div>
 
       <h1>
-        Research on technology, labour, and migrant worlds.
+        Technology, labour, and migrant infrastructures.
       </h1>
 
       <p>
-        I study how digital platforms, care infrastructures, and migrant labour intersect,
-        with a focus on Latina house-cleaners in Toronto and platform economies in Latin America.
+        Researching platform economies, domestic work,
+        mobility, and feminist infrastructures across Latin America and Canada.
       </p>
 
-      <a href="#research" class="btn">View research</a>
     </div>
+
   </header>
 
+  <!-- ABOUT -->
+
   <section id="about">
+
     <div class="container">
-      <h2>About</h2>
 
-      <div class="grid">
-        <div>
-          <p>
-            I am a PhD student at the University of Toronto working at the intersection
-            of STS, CSCW, feminist technoscience, and labour studies.
-          </p>
-        </div>
+      <div class="section-label">About</div>
 
-        <div>
-          <p>
-            My work explores platform labour, domestic work, migration,
-            and collaborative approaches to design and technology.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>
+        Researching the worlds built around care, migration, and platforms.
+      </h2>
 
-  <section id="research">
-    <div class="container">
-      <h2>Research</h2>
-
-      <div class="grid">
-
-        <div class="card">
-          <h3>El costo de la independencia</h3>
-
-          <p>
-            Research on Latina house-cleaners in Toronto and how they navigate
-            digital labour markets, informal networks, and platform economies.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Networks of Care</h3>
-
-          <p>
-            Collaborative work on domestic labour, feminist infrastructures,
-            and informal systems of care beyond platforms.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Domestic Work Platforms in Colombia</h3>
-
-          <p>
-            Research examining how algorithmic systems shape domestic workers’
-            experiences in Colombia.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Mapping Movement</h3>
-
-          <p>
-            A project exploring ride-hailing, urban mobility,
-            and algorithmic labour in Bogotá.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="teaching">
-    <div class="container">
-      <h2>Teaching</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Accessibility and Inclusive Design</h3>
-          <p>Teaching Assistant · University of Toronto</p>
-        </div>
-
-        <div class="card">
-          <h3>Information For the Global Economy</h3>
-          <p>Teaching Assistant · York University</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-
-      <p>
-        isabella@example.com
+      <p class="intro">
+        I am a PhD student in Information at the University of Toronto and a researcher at STREET Lab. My work combines feminist STS, CSCW, ethnography, and collaborative design to study platform labour, domestic work, mobility, and migrant infrastructures.
       </p>
 
-      <a href="#" class="btn">
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            My research explores how Latina migrant workers navigate digital labour markets, informal economies, and technological systems that shape visibility, value, and survival.
+          </p>
+
+          <p>
+            Across projects on domestic work platforms, ride-hailing, and digital cultures, I examine how technologies reorganize labour and everyday life while communities simultaneously build alternative infrastructures of care and resistance.
+          </p>
+
+          <p>
+            I work across qualitative and computational methods, combining ethnography, workshops, interviews, platform analysis, mapping, and participatory research practices.
+          </p>
+
+        </div>
+
+        <div class="side-card">
+
+          <h3>Current Position</h3>
+
+          <ul>
+            <li>PhD Student · University of Toronto</li>
+            <li>Research Assistant · STREET Lab</li>
+            <li>Teaching Assistant · Faculty of Information</li>
+          </ul>
+
+          <h3>Research Areas</h3>
+
+          <div class="tags">
+            <div class="tag">Platform Labour</div>
+            <div class="tag">Migration</div>
+            <div class="tag">Domestic Work</div>
+            <div class="tag">CSCW</div>
+            <div class="tag">Feminist STS</div>
+            <div class="tag">Digital Methods</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESEARCH -->
+
+  <section id="research">
+
+    <div class="container">
+
+      <div class="section-label">Featured Research</div>
+
+      <h2>
+        Research stories.
+      </h2>
+
+      <!-- PROJECT 1 -->
+
+      <div class="research-item">
+
+        <div class="research-image">
+          <img src="IMG_7356.jpg" alt="">
+        </div>
+
+        <div class="research-content">
+
+          <h3>
+            El costo de la independencia
+          </h3>
+
+          <p>
+            Ethnographic research with Latina house-cleaners in Toronto examining how workers navigate asynchronous marketplaces, agencies, informal economies, and digital infrastructures while building autonomy and networks of care.
+          </p>
+
+          <p>
+            The project explores how platforms shape labour conditions, visibility, and mobility, while workers develop situated strategies of resistance and survival.
+          </p>
+
+          <div class="publication">
+            Proceedings of the ACM on Human-Computer Interaction (CSCW 2024)<br><br>
+
+            <a href="https://doi.org/10.1145/3686999" target="_blank">
+              Read publication
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="research-item reverse">
+
+        <div class="research-image">
+          <img src="IMG_7353.jpg" alt="">
+        </div>
+
+        <div class="research-content">
+
+          <h3>
+            Networks of Care
+          </h3>
+
+          <p>
+            Collaborative research investigating how migrant domestic workers build infrastructures of support through WhatsApp groups, shared knowledges, spreadsheets, and informal networks that exceed platform systems.
+          </p>
+
+          <p>
+            This work examines care not only as labour, but as an infrastructural and collective practice.
+          </p>
+
+          <div class="publication">
+            CHI Conference on Human Factors in Computing Systems 2024<br><br>
+
+            <a href="https://doi.org/10.1145/3613904.3642200" target="_blank">
+              Read publication
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PUBLICATIONS -->
+
+  <section id="publications">
+
+    <div class="container">
+
+      <div class="section-label">Selected Publications</div>
+
+      <h2>
+        Writing & publications.
+      </h2>
+
+      <div class="pub-list">
+
+        <div class="pub">
+          <h4>
+            The Digital Boss: Algorithms, Housekeeping Apps, and the Digitalization of Domestic Work in Colombia
+          </h4>
+
+          <p>
+            Accepted for publication in Critical Sociology · 2024
+          </p>
+        </div>
+
+        <div class="pub">
+          <h4>
+            El costo de la independencia: Latino house-cleaners in technology-mediated labour markets
+          </h4>
+
+          <p>
+            Proceedings of the ACM on Human-Computer Interaction (CSCW 2024)
+          </p>
+        </div>
+
+        <div class="pub">
+          <h4>
+            Networks of care in digital domestic labour economies
+          </h4>
+
+          <p>
+            CHI Conference on Human Factors in Computing Systems · 2024
+          </p>
+        </div>
+
+        <div class="pub">
+          <h4>
+            The Digital Body: Fitness, Wellness, and the Politics of Representation in Colombian Social Media
+          </h4>
+
+          <p>
+            Accepted paper · AoIR 2025
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TEACHING -->
+
+  <section id="teaching">
+
+    <div class="container">
+
+      <div class="section-label">Teaching & Experience</div>
+
+      <h2>
+        Teaching, workshops, and collaborative research.
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <span>2025–Present</span>
+          <h4>
+            University of Toronto · Teaching Assistant
+          </h4>
+          <p>
+            User Exploratory Research, Accessibility and Inclusive Design,
+            Worlds Become Data, and Information in the Global Economy.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span>2025</span>
+          <h4>
+            SICSS Bogotá · Guest Instructor
+          </h4>
+          <p>
+            Designed and taught a workshop on platform analysis, digital infrastructures,
+            web scraping, and STS methods.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span>2024–Present</span>
+          <h4>
+            STREET Lab · Research Assistant
+          </h4>
+          <p>
+            Coordinating participatory and co-design research with Latinx migrant cleaning workers in Toronto.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span>2022–2023</span>
+          <h4>
+            Fairwork Colombia · Research Assistant
+          </h4>
+          <p>
+            Conducted qualitative research and workshops on labour conditions within digital platform economies.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="section-label">Contact</div>
+
+      <h2>
+        Let’s connect.
+      </h2>
+
+      <p>
+        isabella.jaimesrodriguez@utoronto.ca
+      </p>
+
+      <a href="cv_isabella_jaimes_rodriguez.pdf" class="button" target="_blank">
         Download CV
       </a>
+
     </div>
+
   </section>
 
   <footer>
-    © 2025 Isabella Jaimes Rodriguez
+    © 2026 Isabella Jaimes Rodriguez
   </footer>
 
 </body>
 </html>
+```
+
 
 
 
