@@ -1,592 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Isabella Jaimes Rodriguez</title>
-  <link rel="stylesheet" href="style.css">
+
   <link href="https://api.fontshare.com/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-</head>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // ===== STORY SLIDER =====
-    const slider = document.querySelector('.story-slider');
 
-    if (slider) {
-      const slides = Array.from(slider.querySelectorAll('.story-slide'));
-      const dots   = Array.from(slider.querySelectorAll('.story-dot'));
-      const prev   = slider.querySelector('.story-arrow.prev');
-      const next   = slider.querySelector('.story-arrow.next');
-      let current = 0;
-
-      if (!slides.length || !prev || !next || !dots.length) {
-        console.warn('Story slider: missing elements');
-        return;
-      }
-
-      function showSlide(index) {
-        current = index;
-        slides.forEach((s, i) => {
-          if (i === current) {
-            s.classList.add('is-active');
-          } else {
-            s.classList.remove('is-active');
-          }
-        });
-
-        dots.forEach((d, i) => {
-          if (i === current) {
-            d.classList.add('is-active');
-          } else {
-            d.classList.remove('is-active');
-          }
-        });
-      }
-
-      prev.addEventListener('click', () => {
-        const newIndex = (current - 1 + slides.length) % slides.length;
-        showSlide(newIndex);
-      });
-
-      next.addEventListener('click', () => {
-        const newIndex = (current + 1) % slides.length;
-        showSlide(newIndex);
-      });
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => showSlide(i));
-      });
-
-      // start on first slide
-      showSlide(0);
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
-  });
-</script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.story-card');
+    body{
+      font-family:'Satoshi', sans-serif;
+      background:#f8f6f2;
+      color:#111;
+      line-height:1.6;
+    }
 
-    // asignar orden para la animación usando data-delay
-    cards.forEach(card => {
-      const delay = card.dataset.delay || 0;
-      card.style.setProperty('--card-order', delay);
-    });
+    .container{
+      width:min(900px, 90%);
+      margin:auto;
+    }
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
+    header{
+      padding:80px 0 60px;
+    }
 
-    cards.forEach(card => observer.observe(card));
-  });
-</script>
+    nav{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:80px;
+      font-size:14px;
+    }
 
-  
+    nav a{
+      text-decoration:none;
+      color:#111;
+      margin-left:20px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      line-height:1;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      font-size:18px;
+      color:#444;
+    }
+
+    section{
+      padding:80px 0;
+      border-top:1px solid #ddd;
+    }
+
+    h2{
+      font-size:32px;
+      margin-bottom:25px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:16px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .card p{
+      color:#555;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:14px 22px;
+      background:#111;
+      color:white;
+      text-decoration:none;
+      border-radius:999px;
+    }
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      font-size:14px;
+      color:#777;
+    }
+
+    @media(max-width:768px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav div:last-child a{
+        margin-left:0;
+        margin-right:15px;
+      }
+    }
+  </style>
+</head>
+
 <body>
 
-  <!-- HERO / LANDING -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-
-    <nav class="nav container">
-      <div class="nav-left">
-        <span class="logo">Isabella Jaimes Rodriguez</span>
+  <header class="container">
+    <nav>
+      <div>
+        <strong>Isabella Jaimes Rodriguez</strong>
       </div>
-      <div class="nav-right">
+
+      <div>
         <a href="#about">About</a>
-        <a href="#current-work">Current Work</a>
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
-        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
-    <div class="hero-content container">
-      <div class="hero-text">
-        <p class="eyebrow">STS · CSCW · Feminist technoscience</p>
+    <div class="hero">
+      <p>STS · CSCW · Feminist Technoscience</p>
 
-        <h1 class="hero-name">
-          Isabella Jaimes Rodriguez
-        </h1>
+      <h1>
+        Research on technology, labour, and migrant worlds.
+      </h1>
 
-        <p class="hero-role">
-          Research on technology, labour, and Latinx migrant worlds.
-        </p>
-
-        <p class="hero-subtitle">
-          I study how Latina migrant housecleaners in Toronto navigate agencies, platforms, 
-          and informal networks that shape how their labour is valued and controlled. 
-          I work with cleaners to map their daily struggles and co-design alternative infrastructures of care. 
-          I ask: what would technologies look like if they were built with the workers who sustain our cities?
-        </p>
-
-        <div class="hero-actions">
-          <a href="#current-work" class="btn primary">Explore my current work</a>
-          <a href="#research" class="btn ghost">See research stories</a>
-        </div>
-      </div>
-  </header>
-
-  <main>
-
-
-    <!-- ABOUT (breve, para situarte temprano) -->
-    <section id="about" class="section container about">
-      <div class="section-header">
-        <h2>About me</h2>
-        <span class="pill">research · storytelling · design</span>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I am an STS and CSCW researcher whose work focuses on how technology
-            shapes and mediates relations within immigrant Latinx communities.
-            My research sits at the intersection of technology, labour, and social
-            justice, with a particular interest in domestic and care work, informal
-            economies, and platformed forms of expertise.
-          </p>
-          <p>
-            I am part of the
-            <strong>Socio-technical Resistance and Ethical Technologies (STREET) Lab</strong>
-            at the University of Toronto, where I collaborate on participatory and
-            design-based projects with migrant workers and community organizations.
-          </p>
-        </div>
-
-        <aside class="about-sidecard">
-          <h3>Current positions</h3>
-          <ul>
-            <li><strong>PhD student</strong>, Faculty of Information · University of Toronto</li>
-            <li>Member, STREET Lab</li>
-            <li>Teaching &amp; Research Assistant</li>
-          </ul>
-
-          <h3>Keywords</h3>
-          <div class="tag-list">
-            <span class="tag">platform labour</span>
-            <span class="tag">domestic work</span>
-            <span class="tag">migration</span>
-            <span class="tag">feminist STS</span>
-            <span class="tag">Latin America</span>
-          </div>
-        </aside>
-      </div>
-
-            <div class="education">
-        <h3>Education</h3>
-        <div class="edu-list">
-          <div class="edu-item">
-            <span class="year">2025–current</span>
-            <p><strong>PhD student</strong>, Faculty of Information · University of Toronto</p>
-          </div>
-          <div class="edu-item">
-            <span class="year">2024–2025</span>
-            <p><strong>MA in Science and Technology Studies</strong> · York University</p>
-          </div>
-          <div class="edu-item">
-            <span class="year">2019–2023</span>
-            <p><strong>B.A. in Sociology</strong> · Universidad del Rosario</p>
-          </div>
-          <div class="edu-item">
-            <span class="year">2018–2022</span>
-            <p><strong>B.A. in Political Science and Government</strong> · Universidad del Rosario</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-      
-    <!-- CURRENT WORK: NARRATIVE SECTION -->
-    <section id="current-work" class="section container current-work">
-      <div class="section-header">
-        <h2>Current Work</h2>
-        <span class="pill">Latina house-cleaners in Toronto</span>
-      </div>
-
-      <div class="cw-grid">
-        <div class="cw-image">
-          <!-- portada principal -->
-          <img src="IMG_7356.jpg" alt="Current research image">
-        </div>
-
-     
-      <div class="cw-text">
-        <div class="story-slider">
-          <!-- Slide 1 -->
-          <div class="story-slide is-active">
-            <p class="story-label">1 · Everyday scenes</p>
-            <p>
-              Manuela*, precise and meticulous, brings her passion for organizing into every home, treating cleaning as a practice of accountability and dignity. Silvia* dreams of leaving her agency to build her own client network, imagining herself not just as a worker but as an entrepreneur carving her autonomy in a new country. Teresa*, balancing clients who pay poorly and agencies that demand too much, stays in the job because it remains the most viable path toward stability despite its contradictions.
-            </p>
-          </div>
-      
-          <!-- Slide 2 -->
-          <div class="story-slide">
-            <p class="story-label">2 · Shared struggles</p>
-            <p>
-              Their aspirations differ—entrepreneurship, regularity, mobility—but they converge in the material struggle of making a life in Canada while navigating language barriers, unclear legal conditions, and the compromises required for survival. It is precisely in this complexity that design becomes meaningful: as a collaborative way of sensing, mapping, and reorganizing the fragile infrastructures through which these women sustain themselves and their communities.
-            </p>
-          </div>
-      
-          <!-- Slide 3 -->
-          <div class="story-slide">
-            <p class="story-label">3 · Designing with</p>
-            <p>
-              This project investigates and co-designs technologies that reimagine domestic work across informal contexts. Its aim is twofold: first, to make visible the macro-networks—economic flows, governance structures, technological infrastructures—that shape the value of labor and care; and second, to surface the micro-networks of community, resistance, and solidarities grounded in the lived experiences of migrant women. By working across these scales, the project explores how technological design can support building pluriversal futures of care and work.
-            </p>
-          </div>
-      
-          <!-- Controls -->
-          <div class="story-controls">
-            <button class="story-arrow prev">← previous</button>
-      
-            <div class="story-dots">
-              <span class="story-dot is-active"></span>
-              <span class="story-dot"></span>
-              <span class="story-dot"></span>
-            </div>
-      
-            <button class="story-arrow next">next →</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-  
-  <!-- RESEARCH STORIES -->
-  <section id="research" class="section research-stories">
-    <div class="container">
-      <div class="section-header">
-        <h2>Research stories</h2>
-        <span class="section-pill">Present & past projects</span>
-      </div>
-  
-      <!-- PRESENT PROJECTS -->
-      <div class="research-group">
-        <h3>Present projects</h3>
-        <p class="column-intro">
-          Ongoing ethnographic and design research with Latina house-cleaners in Toronto,
-          feminist technoscience, and platform-based domestic labour economies.
-        </p>
-  
-        <div class="story-list">
-          <!-- El costo de la independencia -->
-          <article class="story-card" data-delay="0">
-            <div class="story-card-image">
-              <img src="IMG_7356.jpg" alt="Latina house-cleaner writing during workshop">
-            </div>
-            <div class="story-card-body">
-              <p class="story-tag">Current · CSCW paper</p>
-              <h4>El costo de la independencia</h4>
-              <p>
-                Through 19 interviews with Latina house-cleaners in Toronto during 2022, we found how identity 
-                shapes experiences and strategies in the labour markets. We find that Latino house-cleaners prefer 
-                to use asynchronous digital marketplaces, such as social media commerce groups and online classified advertisement websites, 
-                as the platforms provides flexibility and control over their labour outcomes.                
-              </p>
-              <ul class="story-outputs">
-                <li class="label">Outputs</li>
-                <li>
-                  <a href="https://doi.org/10.1145/3686999" target="_blank">
-                    📄 CSCW 2024 – Full research article
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </article>
-  
-          <!-- Networks of care -->
-          <article class="story-card" data-delay="1">
-            <div class="story-card-image">
-              <img src="IMG_7353.jpg" alt="Markers, notes and canvases on workshop table">
-            </div>
-            <div class="story-card-body">
-              <p class="story-tag">Collaborative · CHI 2024</p>
-              <h4>Networks of care in digital domestic labour economies</h4>
-              <p>
-                In collaboration with STREET Lab, this project examines how domestic workers build
-                networks of care, support and resistance within platform infrastructures. We explore how
-                informal WhatsApp groups, shared spreadsheets and tacit knowledges of cleaning become
-                critical infrastructures that exceed the platform.
-              </p>
-  
-              <ul class="story-outputs">
-                <li class="label">Outputs</li>
-                <li>
-                  <a href="https://doi.org/10.1145/3613904.3642200" target="_blank">
-                    📄 CHI 2024 – Full research paper
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-
-    <!-- PAST PROJECTS -->
-    <div class="research-group">
-      <h3>Past projects</h3>
-      <p class="column-intro">
-        Earlier work on ride-hailing, domestic work platforms, mobility, and digital health cultures.
+      <p>
+        I study how digital platforms, care infrastructures, and migrant labour intersect,
+        with a focus on Latina house-cleaners in Toronto and platform economies in Latin America.
       </p>
 
-      <div class="story-list">
-        <!-- Domestic Work Platforms in Colombia -->
-        <article class="story-card" data-delay="0">
-          <div class="story-card-image">
-            <img src="IMG_7359.jpg" alt="Workshop notes on domestic work platforms in Colombia">
-          </div>
-          <div class="story-card-body">
-            <p class="story-tag">Completed</p>
-            <h4>Domestic Work Platforms in Colombia</h4>
-            <p>
-              Domestic work in Colombia has long been undervalued and largely informal. New digital platforms, 
-              like Hogaru, promise stability by directly hiring workers and offering benefits. 
-              Through interface ethnography and interviews, we examine how their matching, ranking, and pricing 
-              algorithms shape workers’ daily experiences and relationships. Our study highlights both the protections 
-              these platforms introduce and the new challenges created by algorithmic decision-making.
-            </p>
-
-            <ul class="story-outputs">
-              <li class="label">Outputs</li>
-              <li>
-                <span>Manuscript in progress (article based on this project).</span>
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Mapping Movement -->
-        <article class="story-card" data-delay="1">
-          <div class="story-card-image">
-            <img src="IMG_7362.jpg" alt="Map and notes about urban mobility in Bogotá">
-          </div>
-          <div class="story-card-body">
-            <p class="story-tag">Completed · Bogotá</p>
-            <h4>Mapping Movement</h4>
-            <p>
-              This project explores how ride-hailing platforms shape drivers' everyday geographies in
-              Bogotá. By interviewing them, we show how drivers negotiate
-              algorithmic control, urban inequality and the desire for mobility as a form of
-              future-making.
-            </p>
-
-            <ul class="story-outputs">
-              <li class="label">Outputs</li>
-              <li>
-                <span>Article in preparation based on this study.</span>
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Between Compliance and Resistance -->
-        <article class="story-card" data-delay="2">
-          <div class="story-card-image">
-            <img src="IMG_7355.jpg" alt="Social media feed and notes about health and fitness">
-          </div>
-          <div class="story-card-body">
-            <p class="story-tag">Completed · Social media</p>
-            <h4>Between Compliance and Resistance</h4>
-            <p>
-              Through computational methods, we studied how social media platforms mediate conversations around fitness, health and
-              mental health among young people in Colombia. We trace how different platforms encourage
-              distinct forms of credibility, storytelling and gendered digital violence, and how users
-              carve out spaces of care and refusal.
-            </p>
-
-            <ul class="story-outputs">
-              <li class="label">Outputs</li>
-              <li>
-                <span>Article in preparation drawing on this project.</span>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </div>
+      <a href="#research" class="btn">View research</a>
     </div>
-  </div>
-</section>
+  </header>
 
-     
-<!-- Publications highlight -->
-<section class="publications-section">
-  <h3>Selected peer-reviewed publications</h3>
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
 
-  <div class="publications-list">
-
-    <!-- Publication 1 -->
-    <article class="pub-card scroll-reveal">
-      <div class="pub-icon">📄</div>
-      <div class="pub-content">
-        <h4>El costo de la independencia</h4>
-        <p class="pub-authors">
-          Jaimes Rodriguez, I., Petterson, A., Doggett, O., & Chandra, P. (2024).
-        </p>
-        <p class="pub-venue">
-          <em>Latino house-cleaners in Technology-Mediated Labour Markets.</em><br>
-          <strong>Proc. ACM Hum.-Comput. Interact.</strong> 8, CSCW2, Article 460.
-        </p>
-        <a class="pub-link" href="https://doi.org/10.1145/3686999" target="_blank">
-          doi.org/10.1145/3686999 →
-        </a>
-      </div>
-    </article>
-
-    <!-- Publication 2 -->
-    <article class="pub-card scroll-reveal">
-      <div class="pub-icon">📄</div>
-      <div class="pub-content">
-        <h4>Networks of care in digital domestic labour economies</h4>
-        <p class="pub-authors">
-          Petterson, A., Jaimes Rodriguez, I., Doggett, O., & Chandra, P. (2024).
-        </p>
-        <p class="pub-venue">
-          <em>In CHI ’24.</em>
-        </p>
-        <a class="pub-link" href="https://doi.org/10.1145/3613904.3642200" target="_blank">
-          doi.org/10.1145/3613904.3642200 →
-        </a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-    <!-- METHODS / HOW I WORK -->
-    <section id="methods" class="section container methods">
-      <div class="section-header">
-        <h2>How I work</h2>
-        <span class="pill">critical &amp; collaborative methods</span>
-      </div>
-
-      <div class="methods-grid">
-        <article class="card">
-          <h3>Critical &amp; feminist ethnography</h3>
+      <div class="grid">
+        <div>
           <p>
-            I approach ethnography as a practice of learning the city alongside the women
-            who sustain it. Rather than “collecting data”, I follow everyday routes,
-            conversations and textures of work to understand how power, care and
-            aspiration are distributed across infrastructures.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Participatory &amp; design-based research</h3>
-          <p>
-            Workshops, audio-stories and speculative exercises become ways of thinking
-            together about work, value and futures. I treat design not as a solutionist
-            tool but as a space to reorganise relations and make visible precarious
-            infrastructures of survival.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Digital methods &amp; mixed approaches</h3>
-          <p>
-            I combine interviews, participant observation and walkthroughs with basic
-            scraping, mapping and network analysis, to trace how digital platforms
-            mediate labour and visibility. Quantitative traces are always interpreted
-            through situated, qualitative understandings.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TEACHING -->
-    <section id="teaching" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <h2>Teaching &amp; mentoring</h2>
-          <span class="pill">Teaching Assistant</span>
-        </div>
-
-        <div class="teaching-grid">
-          <article class="card teaching-card">
-            <h3>Accessibility and Inclusive Design </h3>
-            <p class="teaching-meta">Teaching Assistant · University of Toronto</p>
-            <p>
-              Supporting students in qualitative and mixed-methods user research:
-              from research design and interviews to affinity mapping, thematic analysis
-              and translating findings into design opportunities.
-            </p>
-          </article>
-
-          <article class="card teaching-card">
-            <h3> Information For the Global Economy </h3>
-            <p class="teaching-meta">Teaching Assistant · York University</p>
-            <p>
-              Led tutorials on political economy, platform economies and digital
-              labour, with a focus on connecting theory to students’ everyday media
-              and work experiences.
-            </p>
-          </article>
-
-    <!-- CV -->
-    
-<section id="cv" class="section container cv-section">
-  <div class="cv-text">
-    <a href="cv_isabella_jaimes_rodriguez.pdf" class="btn primary" target="_blank">
-      Download CV (PDF)
-    </a>
-  </div>
-
-  <div class="cv-snippets">
-    <div class="snippet">
-      <span class="snippet-label">Fields</span>
-      <p>STS · CSCW · feminist technoscience · media studies</p>
-    </div>
-    <div class="snippet">
-      <span class="snippet-label">Methods</span>
-      <p>Ethnography, participatory design, digital methods, mixed methods</p>
-    </div>
-    <div class="snippet">
-      <span class="snippet-label">Regions</span>
-      <p>Canada · Colombia · Latin America</p>
-    </div>
-  </div>
-</section>
-
-    <!-- CONTACT / FOOTER ABOUT -->
-    <section id="contact" class="section section-alt">
-      <div class="container contact-section">
-        <div class="contact-text">
-          <h2>Contact</h2>
-          <p>
-            For collaborations, talks, or just to say hi:
-            <a href="mailto:isabella@example.com">isabella@example.com</a>
-          </p>
-          <p class="contact-links">
-            <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
-            <span>·</span>
-            <a href="https://github.com/isajamesrod" target="_blank">GitHub</a>
-            <span>·</span>
-            <a href="#" target="_blank">More links soon</a>
+            I am a PhD student at the University of Toronto working at the intersection
+            of STS, CSCW, feminist technoscience, and labour studies.
           </p>
         </div>
 
-        <div class="contact-photo">
-          <!-- puedes cambiar la imagen si quieres otra -->
-          <img src="IMG_7353.jpg" alt="Portrait of Isabella">
+        <div>
+          <p>
+            My work explores platform labour, domestic work, migration,
+            and collaborative approaches to design and technology.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section id="research">
+    <div class="container">
+      <h2>Research</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>El costo de la independencia</h3>
+
+          <p>
+            Research on Latina house-cleaners in Toronto and how they navigate
+            digital labour markets, informal networks, and platform economies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Networks of Care</h3>
+
+          <p>
+            Collaborative work on domestic labour, feminist infrastructures,
+            and informal systems of care beyond platforms.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Domestic Work Platforms in Colombia</h3>
+
+          <p>
+            Research examining how algorithmic systems shape domestic workers’
+            experiences in Colombia.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mapping Movement</h3>
+
+          <p>
+            A project exploring ride-hailing, urban mobility,
+            and algorithmic labour in Bogotá.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="container">
+      <h2>Teaching</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Accessibility and Inclusive Design</h3>
+          <p>Teaching Assistant · University of Toronto</p>
+        </div>
+
+        <div class="card">
+          <h3>Information For the Global Economy</h3>
+          <p>Teaching Assistant · York University</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+
+      <p>
+        isabella@example.com
+      </p>
+
+      <a href="#" class="btn">
+        Download CV
+      </a>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Isabella Jaimes Rodriguez · Built with GitHub Pages</p>
+    © 2025 Isabella Jaimes Rodriguez
   </footer>
+
 </body>
 </html>
+
+
 
